@@ -1,0 +1,216 @@
+@import '../../assets/styles/vars.less';
+
+.nav-button-outer-layer {
+  width: 62px;
+  height: 62px;
+  position: relative;
+  display: inline-block;
+
+  .nav-button {
+    width: 46px;
+    height: 46px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    position: absolute;
+    margin: -23px 0 0 -23px;
+    transition: all 0.35s;
+
+    .nav-button-inner-layer {
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      width: 46px;
+      height: 46px;
+      cursor: pointer;
+      position: absolute;
+      border-radius: 50%;
+      transition: all .8s;
+      background: @nav-button-color;
+      margin: -23px 0 0 -23px;
+      box-shadow: 0px 2px 4px 0px @nav-button-inner-glow;
+
+      & > div {
+        width: 20px;
+        height: 20px;
+        transition: all .3s;
+      }
+
+      span {
+        width: 4px;
+        height: 4px;
+        float: left;
+        display: block;
+        background: @nav-button-color-hover;
+        transition: all .3s;
+      }
+
+      .level-margin {
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+
+      .vertical-margin {
+        margin-top: 4px;
+        margin-bottom: 4px;
+      }
+
+    }
+
+    &:hover {
+      width: 62px;
+      height: 62px;
+      margin: -31px 0 0 -31px;
+      background: @nav-button-outer-bg;
+
+      .nav-button-inner-layer {
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        margin-left: -20px;
+        background: @nav-button-color-hover;
+        box-shadow:0px 0px 12px 0px @nav-button-inner-glow;
+
+        & > div {
+          width: 18px;
+          height: 18px;
+        }
+
+        span {
+          width: 5px;
+          height: 5px;
+          background: @nav-button-color;
+        }
+
+        .level-margin {
+          margin-left: 1px;
+          margin-right: 1px;
+        }
+
+        .vertical-margin {
+          margin-top: 1px;
+          margin-bottom: 1px;
+        }
+      }
+    }
+
+    .nav-shade-layout {
+      opacity: 0.92;
+      z-index: 101;
+      position: fixed;
+      overflow: hidden;
+      border-radius: 50%;
+      transition: all .8s;
+      background: radial-gradient(circle, @nav-shade-start-bg, @nav-shade-last-bg);
+    }
+
+    .nav-shade-content {
+      top: 50%;
+      left: 50%;
+      margin-left: -30px;
+      margin-top: -8px;
+      position: relative;
+
+      .nav-shade-close {
+        top: -12px;
+        left: 8px;
+        width: 40px;
+        height: 40px;
+        z-index: 103;
+        display: flex;
+        transition: all .35s;
+        border-radius: 50%;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+
+        .iconyingyongguanbi {
+          top: 50%;
+          left: 50%;
+          z-index: 104;
+          color: @nav-shade-close-color;
+          font-size: 30px;
+          position: absolute;
+          margin: -16px 0 0 -20px;
+
+          &::before {
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 50%;
+          }
+        }
+
+        &:hover {
+          top: -23px;
+          left: -3px;
+          width: 62px;
+          height: 62px;
+          background: @nav-shade-close-outer-bg-hover;
+
+          .iconyingyongguanbi::before {
+            background: @nav-shade-close-inner-bg-hover;
+            box-shadow: 0px 0px 12px 0px @nav-button-inner-glow;
+          }
+        }
+      }
+
+      .nav-shade {
+        top: 55px;
+        left: 20px;
+        text-align: left;
+        position: absolute;
+
+        .system-item {
+          width: 60px;
+          cursor: pointer;
+          margin: 25px 30px;
+          text-align: center;
+          display: inline-block;
+          vertical-align: top;
+
+          img {
+            display: inline-block;
+            .square(54px);
+          }
+
+          span {
+            color: @nav-shade-system-titile-color;
+            display: block;
+            font-size: 16px;
+            margin-top: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-button-show {
+    .nav-button-inner-layer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-shade-layout {
+      top: 42px;
+      left: 65px;
+      width: 0px;
+      height: 0px;
+    }
+  }
+
+  .nav-button-hide {
+    .nav-button-inner-layer {
+      display: none;
+    }
+
+    .nav-shade-layout {
+      top: -518px;
+      left: -495px;
+      width: 1120px;
+      height: 1120px;
+    }
+  }
+}

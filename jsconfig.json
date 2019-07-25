@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["./pages/*"],
+      "@layouts/*": ["./layouts/*"],
+      "@components/*": ["./components/*"],
+      "@stores/*": ["./stores/*"],
+      "@assets/*": ["./assets/*"],
+      "@utils/*": ["./utils/*"],
+    },
+    "target": "es6",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+  },
+  "exclude": ["node_modules", ".next"],
+}

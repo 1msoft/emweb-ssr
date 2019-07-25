@@ -1,0 +1,26 @@
+{
+  "presets": ["next/babel", "@babel/preset-env"],
+  "plugins": [
+    // 支持装饰器
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    // antd按需引入
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "lib",
+        "style": true
+      }, "antd"
+    ],
+    // @1msoft/kant-ui 按需引入
+    [
+      "import",
+      {
+        "libraryName": "@1msoft/kant-ui",
+        "libraryDirectory": "lib",
+        "style": true
+      }, "kant-ui"
+    ],
+  ]
+}
