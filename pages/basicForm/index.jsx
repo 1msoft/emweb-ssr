@@ -3,6 +3,7 @@ import { Form, Button } from '@1msoft/kant-ui';
 import { message } from 'antd';
 import dynamic from 'next/dynamic';
 import Layout from '@layouts/Layout';
+import data from './mock';
 
 const PageTitle = dynamic(import("@components/PageTitle"));
 
@@ -41,7 +42,7 @@ const useHookState = (props) => {
       }
     });
   };
-  const formProps = Object.assign({}, props, { config });
+  const formProps = Object.assign({}, props, { config }, data);
   const dataSource = [
     { title: '常见输入框', content: <InputForm {...formProps} /> },
     { title: '文本输入框', content: <TextAreaForm {...formProps} /> },

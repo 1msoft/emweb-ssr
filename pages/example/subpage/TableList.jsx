@@ -10,7 +10,8 @@ import { Table, Popconfirm } from 'antd';
 import { useObserver } from "mobx-react-lite";
 
 import { useStore } from '../store';
-import { roleType } from '../mock';
+import mock from '../mock';
+const roleType = mock.roleType;
 
 const { Column } = Table;
 

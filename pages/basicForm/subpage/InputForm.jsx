@@ -34,7 +34,7 @@ const useHookState = (props) => {
         required: true
       },
       options: {
-        initialValue: '我在菜市场买菜',
+        initialValue: props.title,
         rules: [{ required: true, message: '请输入标题内容' }]
       },
     },
@@ -46,7 +46,7 @@ const useHookState = (props) => {
         required: true
       },
       options: {
-        initialValue: '我在菜市场买菜',
+        initialValue: props.title,
         rules: [{ required: true, message: '请输入标题内容' }]
       }
     },
@@ -74,7 +74,7 @@ const useHookState = (props) => {
         required: true
       },
       options: {
-        initialValue: '我在菜市场买菜',
+        initialValue: props.title,
         rules: [{ required: true, message: '请输入标题内容' }]
       }
     },

@@ -2,9 +2,6 @@ import React from 'react';
 import { Form } from '@1msoft/kant-ui';
 import { renderFormItems } from '@utils/formHelper';
 
-const { FormLayout, FormItem } = Form;
-const text = '';
-
 const useHookState = (props) => {
   const dataSource = [
     {
@@ -39,7 +36,7 @@ const useHookState = (props) => {
         style: { height: 88 }
       },
       options: {
-        initialValue: text,
+        initialValue: props.textarea,
       }
     },
     {
@@ -49,7 +46,7 @@ const useHookState = (props) => {
         style: { height: 88 }
       },
       options: {
-        initialValue: text,
+        initialValue: props.textarea,
       }
     },
     {
@@ -59,7 +56,7 @@ const useHookState = (props) => {
         style: { height: 88 }
       },
       options: {
-        initialValue: text,
+        initialValue: props.textarea,
       }
     },
   ];

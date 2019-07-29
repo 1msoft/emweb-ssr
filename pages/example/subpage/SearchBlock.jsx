@@ -5,13 +5,14 @@ import React, {
 } from 'react';
 import { DatePicker, Button, Icon, AutoComplete } from "antd";
 import { useStore } from '../store';
-import { roleType } from '../mock';
+import mock from '../mock';
 import { Form, InputNumber, Input } from "@1msoft/kant-ui";
 import './SearchBlock.module.less';
 
+const roleType = mock.roleType;
 const { FormLayout, FormItem } = Form;
 const getGrid = FormItem.getGrid;
-
+console.log(roleType, '==roleType==');
 /**
  * @constant
  * 搜索栏总行数

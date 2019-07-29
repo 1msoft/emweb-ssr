@@ -5,7 +5,8 @@ import { useObserver } from "mobx-react-lite";
 import { Form, InputNumber, Input, Select } from "@1msoft/kant-ui";
 
 import { useStore } from '../store';
-import { roleType } from '../mock';
+import mock from '../mock';
+const roleType = mock.roleType;
 
 const { FormLayout, FormItem } = Form;
 const TextArea = Input.TextArea;

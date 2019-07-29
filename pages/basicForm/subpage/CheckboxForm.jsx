@@ -4,13 +4,6 @@ import { Radio } from 'antd';
 
 const { FormLayout, FormItem } = Form;
 const getGrid = FormItem.getGrid;
-const options = [
-  { label: '公开', value: '1' },
-  { label: '部分公开', value: '2' },
-  { label: '不公开', value: '3' },
-  { label: '部分公开', value: '4' },
-  { label: '部分公开', value: '5' }
-];
 
 const CheckboxForm = (props) => {
   return (
@@ -24,10 +17,11 @@ const CheckboxForm = (props) => {
           labelClassName="font-size-16">
           <div>
             <Radio.Group defaultValue={3}>
-              <Radio value={1}>公开</Radio>
-              <Radio value={2}>部分公开</Radio>
-              <Radio value={3}>不公开</Radio>
-              <Radio value={4}>不公开</Radio>
+              {
+                props.RadioGroup.map(item =>
+                  <Radio key={item.value} value={item.value}>{item.label}</Radio>)
+              }
+              
             </Radio.Group>
           </div>
           <div>
@@ -40,7 +34,7 @@ const CheckboxForm = (props) => {
           label="多选"
           labelClassName="font-size-16">
           <Checkbox.Group
-            options={options}
+            options={props.CheckboxGroup}
             defaultValue={["2", "4"]} />
         </FormItem>
       </FormLayout>
