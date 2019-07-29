@@ -8,9 +8,8 @@ import { useStore as useGlobalStore } from '../../stores';
 // 扩展 store
 import Modal from '../../stores/modal';
 
-// mock 数据
-import { data } from './mock';
-
+import mock from './mock';
+const data = mock.data;
 /**
  * 单页面 store
  */
@@ -23,6 +22,7 @@ class Store {
   @observable modal = new Modal();
   @observable list = [];
   @observable selectList = [];
+  @observable roleType = mock.roleType;
   @observable actionData = {};
   @observable queryParams = {};
   @observable page = { pageSize: 10, current: 1, total: 0 };

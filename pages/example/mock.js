@@ -1,150 +1,38 @@
-import moment from 'moment';
-export const data = [
-  {
-    key: '1',
-    name: '胡彦斌',
-    age: 1,
-    type: 'yk',
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '2',
-    name: '胡彦祖',
-    type: 'gly',
-    age: 2,
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '3',
-    name: '胡彦斌',
-    age: 3,
-    type: 'yk',
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '4',
-    name: '胡彦祖',
-    type: 'gly',
-    age: 4,
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '5',
-    name: '胡彦斌',
-    age: 5,
-    type: 'yk',
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '6',
-    name: '胡彦祖',
-    type: 'gly',
-    age: 6,
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '7',
-    name: '胡彦斌',
-    age: 7,
-    type: 'yk',
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '8',
-    name: '胡彦祖',
-    type: 'gly',
-    age: 8,
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '9',
-    name: '胡彦斌',
-    age: 9,
-    type: 'yk',
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '10',
-    name: '胡彦祖',
-    type: 'gly',
-    age: 10,
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '11',
-    name: '胡彦斌',
-    age: 11,
-    type: 'yk',
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-  {
-    key: '12',
-    name: '胡彦祖',
-    type: 'gly',
-    age: 12,
-    address: '西湖区湖底公园1号',
-    createTime: moment(),
-    createAt: '创建人',
-    updateTime: moment(),
-    updateAt: '创建人',
-  },
-];
+import Mock from 'mockjs';
+const Random = Mock.Random;
 
-export const roleType = [
-  {
-    text: 'gly 管理员',
-    value: 'gly',
-  },
-  {
-    text: 'yk 游客',
-    value: 'yk',
-  },
-  {
-    text: 'cjgly 超级管理员',
-    value: 'cjgly',
-  },
-];
+let len = 20;
+const patchs = {
+  names: [],
+  address: [],
+  createTime: [],
+  updateTime: [],
+};
+for (let i = 0; i <= len; i++) {
+  patchs.names.push(Random.cname());
+  patchs.address.push(Random.county(true));
+  patchs.createTime.push(Random.date('yyyy-MM-dd'));
+  patchs.updateTime.push(Random.date('yyyy-MM-dd'));
+}
+
+
+const dataSource = {
+  'data|20': [{
+    'key|+1': 1,
+    'name|+1': patchs.names,
+    'type|+1': ['gly', 'yk', 'cjgly'],
+    'age|18-50': 18,
+    'address|+1': patchs.address,
+    'createTime|+1': patchs.createTime,
+    createAt: '超级管理员',
+    'updateTime|+1': patchs.updateTime,
+    'updateAt': '超级管理员',
+  }],
+  'roleType|3': [{
+    'title|+1': ['gly 管理员', 'yk 游客', 'cjgly 超级管理员'],
+    'value|+1': ['gly', 'yk', 'cjgly'],
+  }]
+};
+
+const mock = Mock.mock(dataSource);
+export default mock;
