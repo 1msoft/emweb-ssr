@@ -114,13 +114,22 @@
     "no-duplicate-imports": 0,
 
     "standard/object-curly-even-spacing": 0,
-    "standard/array-bracket-even-spacing": 0
+    "standard/array-bracket-even-spacing": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
   ],
   "plugins": [
-    "react"
-  ]
+    "react",
+    "react-hooks"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
 }

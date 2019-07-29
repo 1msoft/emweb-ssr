@@ -13,11 +13,15 @@ const Content = dynamic(import('../Content'));
 const routers = [
   {
     "key": "HomePage",
-    "title": "首页", "url": "/", "icon": "iconMail-xiaoxi"
+    "title": "首页", "url": "/", "icon": "iconshouye"
   },
   {
     "key": "Example",
-    "title": "演示", "url": "/example", "icon": "iconMail-xiaoxi",
+    "title": "演示", "url": "/example", "icon": "iconyanshi",
+  },
+  {
+    "key": "basic-form",
+    "title": "基础表单", "url": "/basicForm", "icon": "iconzidianpeizhi",
   },
   {
     "key": "404",
