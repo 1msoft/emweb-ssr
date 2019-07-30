@@ -8,7 +8,7 @@ const component = withRouter((props) => {
       breadcrumbProps={{ separator: "/" }}
       targetItemClass ="next-breadcrumb"
       itemRender={({ path, text }) => <Link href={path}>{text}</Link>}
-      breadcrumbs={[]} />
+      breadcrumbs={props.breadcrumbs} />
   );
 });
 

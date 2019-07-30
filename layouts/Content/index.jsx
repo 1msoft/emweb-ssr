@@ -14,7 +14,7 @@ export default (props) => {
     <Layout className="main-content">
 
       {/* 面包屑 */}
-      <Breadcrumb />
+      <Breadcrumb breadcrumbs={props.breadcrumbs} />
 
       {/* 内容 */}
       <Content className="content">

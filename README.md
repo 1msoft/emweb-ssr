@@ -52,7 +52,7 @@ npm run start
 - [x] `Eslint`配置
 - [x] `Loading`
 - [x] `commitlint`支持
-- [ ] 迁移`emweb`的其他页面及组件
+- [x] 迁移`emweb`的其他页面及组件
 - [ ] 权限登录
 - [ ] 页面过渡
 - [ ] 页面自适应
