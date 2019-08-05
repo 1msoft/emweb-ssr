@@ -87,7 +87,6 @@ module.exports = withLess(
     // 配置文件路径别名
     config.resolve.alias = {
       ...config.resolve.alias,
-      ["@lib"]: path.resolve(__dirname, 'lib'),
       ["@pages"]: path.resolve(__dirname, 'pages'),
       ["@stores"]: path.resolve(__dirname, 'stores'),
       ["@assets"]: path.resolve(__dirname, 'assets'),
