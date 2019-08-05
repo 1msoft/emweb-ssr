@@ -65,26 +65,29 @@ module.exports = withLess(
               warnings: false,
               extractComments: false,
               compress: {
-                drop_console: true
+                drop_console: true,
+                drop_debugger: true,
+                warnings: true,
               },
               ie8: false
-            }
+            },
+            warningsFilter: (warning) => {
+              // HOTFIX: https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250
+              return /Conflicting order between/m.test(warning);
+            },
           }),
           // 配置.env文件
           new Dotenv({
             path: path.join(__dirname, '.env'),
             systemvars: true
           }),
-          // 配置控制台警告过滤
-          new FilterWarningsPlugin({
-            exclude: /chunk styles \[mini-css-extract-plugin\]/,
-          })
       ]);
       config.devtool = 'cheap-module-inline-source-map';
     }
     // 配置文件路径别名
     config.resolve.alias = {
       ...config.resolve.alias,
+      ["@lib"]: path.resolve(__dirname, 'lib'),
       ["@pages"]: path.resolve(__dirname, 'pages'),
       ["@stores"]: path.resolve(__dirname, 'stores'),
       ["@assets"]: path.resolve(__dirname, 'assets'),
