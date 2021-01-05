@@ -25,7 +25,7 @@
   "dependencies": {
     "@1msoft/kant-ui": "0.1.6",
     "antd": "^3.9.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "express": "4.17.1",
     "isomorphic-unfetch": "^3.0.0",
     "less": "2.7.2",
